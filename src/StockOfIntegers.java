@@ -34,7 +34,7 @@ public class StockOfIntegers {
 		String content = "";
 		
 		for (Integer integer : stockArray) {
-			content += " " + integer;
+			content += integer + " ";
 		}
 		
 		return content;
@@ -52,16 +52,16 @@ public class StockOfIntegers {
 	
 	public synchronized int getSumOfArray() {
 	
-		while(!doneWithSum) {
-			
-			try {
-				wait();
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-			
+//		while(!doneWithSum) {
+//			
+//			try {
+//				wait();
+//			} catch (InterruptedException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//		}
+//			
 		// return the sum
 		return this.stockArray.get(0);
 	}
@@ -104,9 +104,6 @@ public class StockOfIntegers {
 		
 		
 		this.stockArray.add(sumOfTwo);
-		
-		
-		
 		notifyAll();	
 	}
 }

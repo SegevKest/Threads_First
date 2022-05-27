@@ -40,17 +40,17 @@ public class Main {
 		}
 		
 		
+		// Wait for all the Threads to finish running
+		for( int i =0; i<numberOfThreads; i++) {
+			
+			try {
+				arrayOfAllThreads[i].join();
+			} catch (InterruptedException e) {
+				System.out.println(i + " Thread was interrupted");
+			}
+		}
 		
-//		for( int i =0; i<numberOfThreads; i++) {
-//			
-//			try {
-//				arrayOfAllThreads[i].join();
-//			} catch (InterruptedException e) {
-//				System.out.println(i + " Thread was interrupted");
-//			}
-//		}
-//		
-//		
+		
 		
 		sumOfArray = stock.getSumOfArray();
 		System.out.println("The Summary of the array is: " + sumOfArray);
