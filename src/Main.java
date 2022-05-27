@@ -12,7 +12,7 @@ public class Main {
 		StockOfIntegers stock;
 		SumThread[] arrayOfAllThreads;
 		
-		int lengthOfStock, numberOfThreads, sumOfArray;
+		int lengthOfStock, numberOfThreads, sumOfArray = 0;
 		
 		// Get input from users
 		System.out.println("Please insert the length of the Stock of integers: ");
@@ -31,13 +31,29 @@ public class Main {
 		
 		for( int i =0; i<numberOfThreads; i++) {
 			
-			arrayOfAllThreads[i] = new SumThread(stock.getStock());
+			arrayOfAllThreads[i] = new SumThread(stock);
 		}
 		
 		for( int i =0; i<numberOfThreads; i++) {
 			
 			arrayOfAllThreads[i].start();
 		}
+		
+		
+		
+//		for( int i =0; i<numberOfThreads; i++) {
+//			
+//			try {
+//				arrayOfAllThreads[i].join();
+//			} catch (InterruptedException e) {
+//				System.out.println(i + " Thread was interrupted");
+//			}
+//		}
+//		
+//		
+		
+		sumOfArray = stock.getSumOfArray();
+		System.out.println("The Summary of the array is: " + sumOfArray);
 		
 	}
 
