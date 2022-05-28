@@ -1,9 +1,9 @@
 
-
-// the Class responsible for creation of the the Sum Thread
+// the Class responsible for creation of the Sum Thread
+// And overriding the Thread run() method according to the question
 public class SumThread extends Thread{
 
-
+	// each thread will receive the stock of Integers object to use - the shared resource
 	private StockOfIntegers stock;
 
 	// The constructor of the SumThread Class
@@ -13,20 +13,17 @@ public class SumThread extends Thread{
 		this.stock = stock;
 	}
 
-
-
 	//Override the Run method in the Thread Class
 	public void run(){
 
 		int currSumToInsert = 0;
 
-		// Gets both of the numbers		
-
-		while (this.stock.getStock().size() > 1) {
+		// iterate on all array until its size is bigger than 1 - if not bigger - means we are done.
+		while (this.stock.getStockSize() > 1) {
 			
+			
+			// Gets both of the numbers		
 			int[] twoMembers = this.stock.getTwoMembers();
-
-			System.out.println(twoMembers[0] +" + "+ twoMembers[1]);
 
 			// Calculate the sum of both cells
 			currSumToInsert = twoMembers[0] + twoMembers[1];
