@@ -16,6 +16,7 @@ public class SumThread extends Thread{
 	//Override the Run method in the Thread Class
 	public void run(){
 
+		super.run();
 		int currSumToInsert = 0;
 
 		// iterate on all array until its size is bigger than 1 - if not bigger - means we are done.

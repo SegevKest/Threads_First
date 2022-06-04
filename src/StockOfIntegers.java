@@ -43,6 +43,11 @@ public class StockOfIntegers {
 	// The method will access the array and return its final summary of all past cells 
 	//- which will be located at the first index as the only member of the arraylist
 	public synchronized int getSumOfArray() {
+		
+		
+		
+		//EDIT ???
+		//CHECK SLIDE 88 on Presentation in GetTotal Method
 			
 		// return the sum
 		return this.stockArray.get(0);
